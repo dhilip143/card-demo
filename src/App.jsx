@@ -7,7 +7,7 @@ import SectionSix from "./components/SectionSix";
 import SectionSeven from "./components/SectionSeven";
 import SectionEight from "./components/SectionEight";
 import ButterflyModel from "./components/ButterflyModel";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 
 // import video from "/src/assets/Pastel_Gradient_Abstract_Background_Animation.mp4"
 
@@ -43,7 +43,7 @@ export default function App() {
       <ButterflyModel />
 
       {/* Page sections */}
-      <Header />
+      {/* <Header /> */}
       <div className="section-one">
         <SectionOne />
       </div>
@@ -66,7 +66,7 @@ export default function App() {
         <SectionSeven />
       </div>
       <div className="section-eight">
-        <SectionEight />
+        {/* <SectionEight /> */}
       </div>
     </div>
   );

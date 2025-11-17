@@ -50,7 +50,7 @@ export default function MorphParticles() {
     // Load Butterfly
     const loader = new GLTFLoader();
 
-    loader.load("/models/animated_butterfly/scene.gltf", (gltf) => {
+    loader.load("/models/nfc.glb", (gltf) => {
       const butterfly = gltf.scene;
       butterfly.scale.set(10, 10, 10);
       butterfly.position.set(12, -7, 0);
