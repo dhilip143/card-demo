@@ -52,10 +52,10 @@ export default function MorphParticles() {
 
     loader.load("/models/nfc.glb", (gltf) => {
       const butterfly = gltf.scene;
-      butterfly.scale.set(10, 10, 10);
-      butterfly.position.set(12, -7, 0);
-      butterfly.rotation.y = 4.5;
-      butterfly.rotation.x = 0.2;
+      butterfly.scale.set(5, 5, 5);
+      butterfly.position.set(30, 35, 0);
+      butterfly.rotation.y = 25;
+      butterfly.rotation.x = 7.5;
       butterfly.castShadow = true;
       scene.add(butterfly);
       butterflyRef.current = butterfly;
@@ -78,7 +78,7 @@ export default function MorphParticles() {
             // markers: true,
           },
         })
-        .to(butterfly.position, { x: 2, y: -10, duration: 1 })
+        .to(butterfly.position, { x: 2, y: -8, duration: 1 })
         .to(butterfly.scale, { x: 2, y: 2, z: 2, duration: 2 })
         .to(butterfly.position, { x: -5, y: -10, z: 0, duration: 1 })
         .to(butterfly.rotation, { y: 3.5, duration: 3 });
@@ -94,7 +94,7 @@ export default function MorphParticles() {
             // markers: true,
           },
         })
-        .to(butterfly.rotation, { y: 4.0, duration: 0.1 })
+        .to(butterfly.rotation, { y: 12.9, duration: 0.1 })
         .to(butterfly.position, { y: 2, duration: 3 })
         .to(butterfly.position, { y: 14, duration: 3 });
 
