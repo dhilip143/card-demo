@@ -1,3 +1,59 @@
+// import SectionOne from "./components/SectionOne";
+// import SectionTwo from "./components/SectionTwo";
+// import SectionThree from "./components/SectionThree";
+// import SectionFour from "./components/SectionFour";
+// import SectionFive from "./components/SectionFive";
+// import SectionSix from "./components/SectionSix";
+// import SectionSeven from "./components/SectionSeven";
+// import SectionEight from "./components/SectionEight";
+// import ButterflyModel from "./components/ButterflyModel";
+
+// export default function App() {
+//   return (
+//     <div className="relative w-full min-h-[500vh] overflow-x-hidden">
+//       {/* Aurora Dream Diagonal Flow background */}
+//       <div
+//         className="fixed inset-0 -z-10 bg-[#172d16]"
+//       />
+
+//       {/* Butterfly always on top */}
+//       <ButterflyModel />
+
+//       {/* Page sections */}
+//       {/* <Header /> */}
+//       <div className="section-one">
+//         <SectionOne />
+//       </div>
+//       <div className="section-two">
+//         <SectionTwo />
+//       </div>
+//       <div className="section-three">
+//         <SectionThree />
+//       </div>
+//       <div className="section-four">
+//         <SectionFour />
+//       </div>
+//       <div className="section-five">
+//         <SectionFive />
+//       </div>
+//       <div className="section-six">
+//         <SectionSix />
+//       </div>
+//       <div className="section-seven">
+//         <SectionSeven />
+//       </div>
+//       <div className="section-eight">
+//         {/* <SectionEight /> */}
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+import { useEffect } from "react";
 import SectionOne from "./components/SectionOne";
 import SectionTwo from "./components/SectionTwo";
 import SectionThree from "./components/SectionThree";
@@ -7,43 +63,51 @@ import SectionSix from "./components/SectionSix";
 import SectionSeven from "./components/SectionSeven";
 import SectionEight from "./components/SectionEight";
 import ButterflyModel from "./components/ButterflyModel";
-// import Header from "./components/Header";
 
-// import video from "/src/assets/Pastel_Gradient_Abstract_Background_Animation.mp4"
+// 1. Import Lenis and GSAP
+import Lenis from "lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function App() {
+
+  // 2. Setup Smooth Scroll + GSAP Sync
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2, // Adjust speed: higher = smoother/slower
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth easing function
+      direction: "vertical",
+      smooth: true,
+    });
+
+    // Get Lenis to talk to ScrollTrigger
+    lenis.on("scroll", ScrollTrigger.update);
+
+    // Sync GSAP's ticker with Lenis's requestAnimationFrame
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    // Turn off GSAP lag smoothing to prevent stuttering
+    gsap.ticker.lagSmoothing(0);
+
+    // Cleanup
+    return () => {
+      gsap.ticker.remove(lenis.raf);
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <div className="relative w-full min-h-[500vh] overflow-x-hidden">
       {/* Aurora Dream Diagonal Flow background */}
-      <div
-        className="fixed inset-0 -z-10"
-        style={{
-          background: `
-            radial-gradient(ellipse 80% 60% at 5% 40%, rgba(175, 109, 255, 0.48), transparent 67%),
-            radial-gradient(ellipse 70% 60% at 45% 45%, rgba(255, 100, 180, 0.41), transparent 67%),
-            radial-gradient(ellipse 62% 52% at 83% 76%, rgba(255, 235, 170, 0.44), transparent 63%),
-            radial-gradient(ellipse 60% 48% at 75% 20%, rgba(120, 190, 255, 0.36), transparent 66%),
-            linear-gradient(45deg, #f7eaff 0%, #fde2ea 100%)
-          `,
-        }}
-      />
-
-      {/* --- Background Video --- */}
-      {/* <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-screen object-cover z-0"
-      >
-        <source src={video} type="video/mp4" />
-      </video> */}
+      <div className="fixed inset-0 -z-10 bg-[#172d16]" />
 
       {/* Butterfly always on top */}
+      {/* Note: Since Lenis keeps native scroll, fixed elements work perfectly */}
       <ButterflyModel />
 
       {/* Page sections */}
-      {/* <Header /> */}
       <div className="section-one">
         <SectionOne />
       </div>

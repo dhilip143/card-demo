@@ -15,7 +15,6 @@ const CraftBeautiful = () => {
   const button2Ref = useRef(null);
   const cardRef = useRef(null);
   const [isButton1Hovered, setIsButton1Hovered] = useState(false);
-  const [isButton2Hovered, setIsButton2Hovered] = useState(false);
 
   // Ripple effect for buttons
   const createRipple = (event) => {
@@ -243,7 +242,7 @@ const CraftBeautiful = () => {
       >
         <div
           ref={containerRef}
-          className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 relative"
+          className=" mx-[2%] flex flex-col lg:flex-row items-center justify-between gap-12 relative"
         >
           {/* Text Content */}
           <div className="lg:w-1/2 text-left">
@@ -304,45 +303,7 @@ const CraftBeautiful = () => {
               </button>
             </div>
           </div>
-
-          {/* NFC Card Visual */}
-          <div className="lg:w-1/2 flex justify-center lg:justify-end">
-            <div
-              ref={cardRef}
-              className="relative w-80 h-52 rounded-2xl bg-gradient-to-br from-[#1a3319] to-[#2a4f28] shadow-2xl border border-accent/20 overflow-hidden cursor-pointer transform transition-transform duration-500"
-            >
-              {/* Card Chip */}
-              <div className="absolute top-6 left-6 w-12 h-10 bg-gradient-to-br from-[#e1f9df] to-[#a8f5a4] rounded-md"></div>
-              
-              {/* NFC Wave Lines */}
-              <div className="absolute top-1/2 left-0 right-0 transform -translate-y-1/2">
-                <div className="w-full h-1 bg-accent/30 rounded-full mb-2"></div>
-                <div className="w-4/5 h-1 bg-accent/40 rounded-full mb-2 ml-auto mr-auto"></div>
-                <div className="w-3/5 h-1 bg-accent/50 rounded-full ml-auto mr-auto"></div>
-              </div>
-              
-              Contactless Symbol
-              <div className="absolute bottom-6 right-6 w-12 h-12 border-2 border-accent rounded-full flex items-center justify-center">
-                <div className="w-8 h-8 border-2 border-accent rounded-full"></div>
-                <div className="absolute w-4 h-1 bg-accent top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
-              </div>
-              
-              {/* Card Text */}
-              <div className="absolute bottom-6 left-6">
-                <div className="text-accent/80 text-sm font-light">NFC TECHNOLOGY</div>
-                <div className="text-white text-lg font-semibold">TAP TO CONNECT</div>
-              </div>
-              
-              {/* Shimmer Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/10 to-transparent transform -skew-x-12 animate-shimmer"></div>
-            </div>
-          </div>
         </div>
-
-        {/* Floating elements */}
-        <div className="absolute top-20 left-10 w-4 h-4 bg-accent rounded-full opacity-60 animate-float"></div>
-        <div className="absolute bottom-40 right-20 w-6 h-6 bg-accent rounded-full opacity-40 animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-accent rounded-full opacity-50 animate-float" style={{animationDelay: '4s'}}></div>
       </section>
 
       <style jsx>{`
@@ -422,7 +383,7 @@ const CraftBeautiful = () => {
           animation: float 6s ease-in-out infinite;
         }
         
-        .hover\:shadow-3xl:hover {
+        .hover:shadow-3xl:hover {
           box-shadow: 0 25px 50px -12px rgba(225, 249, 223, 0.25),
             0 0 15px rgba(225, 249, 223, 0.3);
         }

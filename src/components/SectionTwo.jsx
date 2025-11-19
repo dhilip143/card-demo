@@ -37,9 +37,9 @@ export default function SectionTwo() {
   return (
     <section
       ref={sectionRef}
-      className="w-full min-h-screen flex items-center px-6 sm:px-12 lg:px-16 bg-primary"
+      className="w-full min-h-screen flex items-center px-6 sm:px-12 lg:px-16 bg-primary "
     >
-      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-end gap-12">
         {/* --- Text Content --- */}
         <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
           <h2 className="anim-text font-semibold uppercase tracking-wider mb-3 text-base text-[#a8e6a3]">
@@ -86,14 +86,14 @@ export default function SectionTwo() {
         </div>
 
         {/* --- Lottie Animation --- */}
-        <div className="flex items-center justify-center w-full lg:w-1/2 min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
+        {/* <div className="flex items-center justify-center w-full lg:w-1/2 min-h-[300px] sm:min-h-[400px] lg:min-h-[500px]">
           <Lottie
             animationData={processorAnimation}
             loop={true}
             autoplay={true}
             className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-xl xl:scale-125"
           />
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`
