@@ -301,8 +301,8 @@ export default function OrderProcessSection() {
 
   return (
     <section
-      ref={sectionRef}
-      className="min-h-screen flex flex-col justify-center items-center font-sans py-16 md:py-20 relative px-4 overflow-hidden"
+      // ref={sectionRef}
+      className="min-h-screen flex flex-col justify-center items-center font-sans py-16 md:py-20 relative px-4 overflow-hidden bg-black z-50 "
       style={{ backgroundColor: '#172d16' }}
     >
       {/* 3D Butterfly Background */}
@@ -386,7 +386,7 @@ export default function OrderProcessSection() {
         {/* Steps Grid */}
         <div
           ref={stepsRef}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 relative"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 relative "
           style={{ zIndex: 10 }}
         >
           {steps.map((step, index) => (

@@ -41,7 +41,7 @@ export default function SectionTwo() {
     >
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-end gap-12">
         {/* --- Text Content --- */}
-        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl">
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center md:text-center lg:text-left max-w-2xl">
           <h2 className="anim-text font-semibold uppercase tracking-wider mb-3 text-base text-[#a8e6a3]">
             NFC Technology
           </h2>
@@ -80,9 +80,21 @@ export default function SectionTwo() {
             </p>
           </div>
 
-          <button className="anim-text px-6 sm:px-8 py-3 bg-[#a8e6a3] text-gray-900 font-semibold rounded-full hover:bg-[#98d893] transition-transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#a8e6a3] shadow-lg">
-            Browse NFC visiting card designs
-          </button>
+          <button
+  className="
+    anim-text
+    px-4 py-2 text-sm          <!-- smaller mobile size -->
+    sm:px-8 sm:py-3 sm:text-base  <!-- bigger on tablets/desktops -->
+    bg-[#a8e6a3] text-gray-900 font-semibold 
+    rounded-full hover:bg-[#98d893]
+    transition-transform hover:scale-105
+    focus:outline-none focus:ring-4 focus:ring-[#a8e6a3]
+    shadow-lg
+  "
+>
+  Browse NFC visiting card designs
+</button>
+
         </div>
 
         {/* --- Lottie Animation --- */}

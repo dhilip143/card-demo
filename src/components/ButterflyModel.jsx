@@ -335,7 +335,7 @@ export default function MorphParticles() {
           end: "clamp(bottom top)",
           // pin: true,
           scrub: true,
-          markers: true
+          // markers: true
         },
       })
         .to(butterfly.position, {
@@ -370,7 +370,7 @@ export default function MorphParticles() {
             start: "clamp(top center)",
             end: "clamp(bottom center)",
             scrub: true,
-            markers: true
+            // markers: true
           },
         })
         .to(butterfly.scale, { x: 7, y: 7, z: 7, duration: 0.5 })

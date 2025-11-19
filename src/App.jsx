@@ -59,10 +59,11 @@ import SectionTwo from "./components/SectionTwo";
 import SectionThree from "./components/SectionThree";
 import SectionFour from "./components/SectionFour";
 import SectionFive from "./components/SectionFive";
-import SectionSix from "./components/SectionSix";
+// import SectionSix from "./components/SectionSix";
 import SectionSeven from "./components/SectionSeven";
 import SectionEight from "./components/SectionEight";
 import ButterflyModel from "./components/ButterflyModel";
+
 
 // 1. Import Lenis and GSAP
 import Lenis from "lenis";
@@ -105,7 +106,9 @@ export default function App() {
 
       {/* Butterfly always on top */}
       {/* Note: Since Lenis keeps native scroll, fixed elements work perfectly */}
+      <div className="hidden lg:block">
       <ButterflyModel />
+      </div>
 
       {/* Page sections */}
       <div className="section-one">
@@ -114,18 +117,23 @@ export default function App() {
       <div className="section-two">
         <SectionTwo />
       </div>
-      <div className="section-three">
+      {/* <div className="hidden md:flex sm-flex section-three">
         <SectionThree />
+      </div>  */}
+
+      <div className="hidden lg:block section-three">
+      <SectionThree />
       </div>
+
       <div className="section-four">
         <SectionFour />
       </div>
       <div className="section-five">
         <SectionFive />
       </div>
-      <div className="section-six">
+      {/* <div className="section-six">
         <SectionSix />
-      </div>
+      </div> */}
       <div className="section-seven">
         <SectionSeven />
       </div>

@@ -402,17 +402,17 @@ export default function NFCFeaturesSection() {
     >
       {/* Section Title */}
       <h1
-        className="section-title text-center font-bold text-4xl sm:text-5xl lg:text-6xl mb-16"
+        className="section-title text-center  font-bold text-4xl sm:text-5xl lg:text-6xl mb-16"
         style={{ color: "#E1F9DF" }}
       >
         Unleash the Power of NFC Business Cards
       </h1>
 
       {/* 3-column layout (middle empty) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl w-full">
         
         {/* LEFT COLUMN */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 md:gap-3">
           {leftColumnCards.map((card, index) => (
             <FeatureCard
               key={index}
@@ -424,7 +424,7 @@ export default function NFCFeaturesSection() {
         </div>
 
         {/* EMPTY MIDDLE COLUMN (3D model appears behind) */}
-        <div className="hidden md:block"></div>
+        <div className="hidden lg:block"></div>
 
         {/* RIGHT COLUMN */}
         <div className="flex flex-col gap-6">
